@@ -50,7 +50,7 @@
   (read-config)
   (when *acceptor*
     (error "The web server is already running."))
-
+  (setf yason:*symbol-key-encoder* 'yason:encode-symbol-as-lowercase)
   (setf *acceptor* (make-instance 'simpleroutes-acceptor
                                   :routes '*routes*
                                   :address (copy-seq *listen-address*)
@@ -77,5 +77,3 @@
   "Return OK when the server is OK."
   (setf (hunchentoot:content-type*) "text/plain")
   "OK")
-
-

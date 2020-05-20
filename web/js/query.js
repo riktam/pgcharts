@@ -89,8 +89,8 @@ function display_result()
         if ($.isArray(qdata))
         {
             qdesc = $("#qdesc").val();
-            qcats = $("#cats").val().toUpperCase();
-            qseries = $("#series").val().toUpperCase();
+            qcats = $("#cats").val().toLowerCase();
+            qseries = $("#series").val().toLowerCase();
             xtitle = $("#xtitle").val();
             ytitle = $("#ytitle").val();
             type = $("#chart-type option:selected").val().toLowerCase();
